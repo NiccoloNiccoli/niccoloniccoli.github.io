@@ -1,0 +1,65 @@
+/* Color Theme Swatches in Hex */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,900&display=swap');
+:root{
+    --dark-teal: #025259;
+    --light-teal: #007172;
+    --orange: #F29325;
+    --dark-orange: #D94F04;
+    --gray: #F4E2DE;
+}
+.orange--teal-1-hex { color: #025259; }
+.orange--teal-2-hex { color: #007172; }
+.orange--teal-3-hex { color: #F29325; }
+.orange--teal-4-hex { color: #D94F04; }
+.orange--teal-5-hex { color: #F4E2DE; }
+
+
+*{
+    margin:0;
+    padding:0;
+}
+nav.navbar{
+    background-color: var(--dark-teal);
+    color: var(--orange);
+    font-family: "Futura CondensedLight", Futura,  sans-serif;
+    font-size: 150%;
+}
+
+div.navbar-content{
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+}
+#page-list li{
+    float:left;
+    padding: 15px 15px 0 15px;
+    list-style-type: none;
+}
+#page-list li a:link,
+#page-list li a:visited{
+    color: var(--orange);
+    text-decoration: none;
+}
+#page-list li a:hover{
+    color: var(--gray);
+}
+#page-list li.active a{
+    color: var(--dark-orange);
+}
+
+#main-title{
+    text-align: center;
+    float:right;
+}
+
+body{
+    background-color: var(--gray);
+    color: var(--dark-teal);
+}
+div.main-content{
+    padding: 10px 10px 0 10px;
+    font-size: 110%;
+    font-family: "Lato", serif;
+    font-weight: 400;
+
+}
