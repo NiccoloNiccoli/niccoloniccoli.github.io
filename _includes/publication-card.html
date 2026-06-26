@@ -1,0 +1,43 @@
+{% assign publication = include.publication %}
+{% assign heading = include.heading | default: 'h2' %}
+{% assign primary_url = publication.links.paper %}
+{% if primary_url == nil or primary_url == '' %}
+    {% assign primary_url = publication.links.pdf %}
+{% endif %}
+{% if primary_url == nil or primary_url == '' %}
+    {% assign primary_url = publication.links.doi %}
+{% endif %}
+
+<article class="publication-card{% if include.large %} publication-card-large{% endif %}">
+    {% if publication.thumbnail %}
+    <a class="publication-media{% if publication.thumbnail_fit == 'contain' %} publication-media-contain{% endif %}" href="{{ primary_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open paper page">
+        <img src="{{ publication.thumbnail | relative_url }}" alt="Thumbnail for {{ publication.title | escape }}">
+    </a>
+    {% elsif publication.thumbnail_label %}
+    <a class="publication-media publication-media-fallback" href="{{ primary_url }}" target="_blank" rel="noopener noreferrer" aria-label="Open paper page">
+        <span>{{ publication.thumbnail_label }}</span>
+    </a>
+    {% endif %}
+    <div class="publication-body">
+        <p class="publication-year">{{ publication.year }}{% if publication.venue %} · {{ publication.venue }}{% endif %}{% if publication.publisher %} · {{ publication.publisher }}{% endif %}</p>
+        <{{ heading }}>{{ publication.title }}</{{ heading }}>
+        <p class="authors">
+            {% for author in publication.authors %}
+                {% if author == site.data.profile.name %}<strong>{{ author }}</strong>{% else %}{{ author }}{% endif %}{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+        </p>
+        <div class="publication-summary">
+            {{ publication.content }}
+        </div>
+        <div class="tag-row" aria-label="Publication topics">
+            {% for tag in publication.tags %}
+            <span>{{ tag }}</span>
+            {% endfor %}
+        </div>
+        <div class="publication-actions">
+            {% if publication.links.paper %}<a href="{{ publication.links.paper }}" target="_blank" rel="noopener noreferrer">Paper</a>{% endif %}
+            {% if publication.links.pdf %}<a href="{{ publication.links.pdf }}" target="_blank" rel="noopener noreferrer">PDF</a>{% endif %}
+            {% if publication.links.doi %}<a href="{{ publication.links.doi }}" target="_blank" rel="noopener noreferrer">DOI</a>{% endif %}
+        </div>
+    </div>
+</article>

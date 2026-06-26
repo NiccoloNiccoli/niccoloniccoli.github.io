@@ -1,0 +1,14 @@
+---
+layout: default
+---
+<section class="section-block publication-page-heading" aria-labelledby="publications-title">
+    <p class="eyebrow">Research Output</p>
+    <h1 id="publications-title">Publications</h1>
+</section>
+
+<section class="publication-list" aria-label="Publication list">
+    {% assign publications = site.publications | sort: 'date' | reverse %}
+    {% for publication in publications %}
+        {% include publication-card.html publication=publication heading='h2' large=true %}
+    {% endfor %}
+</section>

@@ -1,0 +1,10 @@
+title: "Niccolò Niccoli"
+description: "Personal academic website of Niccolò Niccoli."
+url: "https://niccoloniccoli.github.io"
+baseurl: ""
+timezone: "Europe/Rome"
+markdown: kramdown
+
+collections:
+  publications:
+    output: false
