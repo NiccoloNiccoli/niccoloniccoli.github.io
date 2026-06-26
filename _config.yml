@@ -1,9 +1,10 @@
 title: "Niccolò Niccoli"
-description: "Personal academic website of Niccolò Niccoli."
+description: "Niccolò Niccoli is a PhD student at the University of Florence working on computer vision, image geolocalization, adversarial robustness, image retrieval, and AI for ecological monitoring."
 url: "https://niccoloniccoli.github.io"
 baseurl: ""
 timezone: "Europe/Rome"
 markdown: kramdown
+lang: "en"
 
 collections:
   publications:
