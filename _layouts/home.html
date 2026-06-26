@@ -4,35 +4,29 @@ layout: default
 {% assign profile = site.data.profile %}
 
 <section class="profile-section" aria-labelledby="profile-title">
-    <img class="profile-photo" src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt | escape }}">
+    <div class="profile-overview">
+        <img class="profile-photo" src="{{ profile.photo | relative_url }}" alt="{{ profile.photo_alt | escape }}">
 
-    <div class="profile-main">
-        <p class="eyebrow">{{ profile.tagline }}</p>
-        <h1 id="profile-title">{{ profile.name }}</h1>
-        <p class="role">{{ profile.role }}</p>
+        <div class="profile-main">
+            <h1 id="profile-title">{{ profile.name }}</h1>
+            <p class="role">{{ profile.role }}</p>
+            <p class="affiliation-line">{{ profile.affiliation }}</p>
+            <p class="email-line">Email: {{ profile.email_display }}</p>
 
-        {% include social-links.html profile=profile %}
+            {% include social-links.html profile=profile %}
+        </div>
     </div>
 
-    <dl class="details-list" aria-label="Personal details">
-        <div>
-            <dt>Email</dt>
-            <dd>{{ profile.email_display }}</dd>
-        </div>
-        <div>
-            <dt>Affiliation</dt>
-            <dd>{{ profile.affiliation }}</dd>
-        </div>
+    <div class="profile-description">
+        {{ content }}
+    </div>
+
+    <dl class="details-list" aria-label="Research details">
         <div>
             <dt>Interests</dt>
             <dd>{{ profile.interests }}</dd>
         </div>
     </dl>
-</section>
-
-<section class="section-block" aria-labelledby="about-title">
-    <h2 id="about-title">About</h2>
-    {{ content }}
 </section>
 
 <section class="section-block" aria-labelledby="news-title">
