@@ -2,7 +2,7 @@
 layout: home
 title: "Niccolò Niccoli"
 meta_title: "Niccolò Niccoli | Computer Vision PhD Student"
-nav: top
+nav: home
 permalink: /
 description: "Niccolò Niccoli is a PhD student at the University of Florence researching computer vision, image geolocalization, adversarial robustness, image retrieval, and AI for ecological monitoring."
 ---
