@@ -13,7 +13,7 @@
         <nav class="nav-shell" aria-label="Primary navigation">
             <a class="brand" href="{{ '/' | relative_url }}">{{ site.data.profile.name }}</a>
             <div class="nav-links">
-                <a{% if page.nav == 'top' %} class="active"{% endif %} href="{{ '/' | relative_url }}">Top</a>
+                <a{% if page.nav == 'home' or page.nav == 'top' %} class="active"{% endif %} href="{{ '/' | relative_url }}">Home</a>
                 <a{% if page.nav == 'publications' %} class="active"{% endif %} href="{{ '/publications.html' | relative_url }}">Publications</a>
             </div>
         </nav>
